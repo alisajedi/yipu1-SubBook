@@ -68,7 +68,7 @@ public class Subscription implements Serializable {
 
     //Returns a string containing subscription name, date and amount.
     public String toString() {
-        //return String.format("%-20s | %-15s | %-10.2f | %-30s", name, date, amount, comment);
-        return (name + "\n" + date + "\n$" + amount);
+        return String.format("%-20s\n%-15s\n$%-10.2f", name, date, amount);
+        //return (name + "\n" + date + "\n$" amount);
     }
 }

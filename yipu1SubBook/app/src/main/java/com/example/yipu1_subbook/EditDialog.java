@@ -54,7 +54,7 @@ public class EditDialog extends Dialog {
     @Override
     protected void onCreate(Bundle SaveInstanceState) {
         super.onCreate(SaveInstanceState);
-        setContentView(R.layout.create_dialog);
+        setContentView(R.layout.edit_dialog);
         initView();
         setListener();
     }

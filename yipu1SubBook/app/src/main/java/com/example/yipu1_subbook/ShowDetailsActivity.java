@@ -89,7 +89,6 @@ public class ShowDetailsActivity extends AppCompatActivity {
                 subscription.setDate(date);
                 subscription.setAmount(Float.valueOf(amount));
                 subscription.setComment(comment);
-                subscriptionList.add(subscription);
                 FileUtils.saveInFile(ShowDetailsActivity.this,subscriptionList);
                 updateText();
             }

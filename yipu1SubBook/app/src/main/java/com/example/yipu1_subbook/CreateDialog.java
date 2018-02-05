@@ -112,7 +112,5 @@ public class CreateDialog extends Dialog {
             return true;
         }
     }
-
-
 }
 

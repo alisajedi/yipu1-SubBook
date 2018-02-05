@@ -76,20 +76,21 @@ public class MainActivity extends Activity {
             }
         });
 
-        final CreateDialog createDialog = new CreateDialog(this, new CreateDialog.onDialogListener() {
-            @Override
-            public void onEnsure(String name, String date, String amount, String comment) {
-                Subscription subscription = new Subscription(name, date, amount, comment);
-                subscriptionList.add(subscription);
-                FileUtils.saveInFile(MainActivity.this,subscriptionList);
-                adapter.notifyDataSetChanged();
-                updateTotalAmount();
-            }
-        });
+
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                 CreateDialog createDialog = new CreateDialog(MainActivity.this, new CreateDialog.onDialogListener() {
+                    @Override
+                    public void onEnsure(String name, String date, String amount, String comment) {
+                        Subscription subscription = new Subscription(name, date, amount, comment);
+                        subscriptionList.add(subscription);
+                        FileUtils.saveInFile(MainActivity.this,subscriptionList);
+                        adapter.notifyDataSetChanged();
+                        updateTotalAmount();
+                    }
+                });
                 createDialog.show();
 
             }
