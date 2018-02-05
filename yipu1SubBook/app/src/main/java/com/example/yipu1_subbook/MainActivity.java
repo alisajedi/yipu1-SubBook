@@ -47,7 +47,7 @@ import static java.lang.Boolean.TRUE;
  * It shows
  */
 public class MainActivity extends Activity {
-    private static final String FILENAME = "subscription_list.sav";
+    //private static final String FILENAME = "subscription_list.sav";
 
     private ListView historyList;
     private TextView totalText;
@@ -102,6 +102,7 @@ public class MainActivity extends Activity {
         super.onStart();
     }
 
+    @Override
     protected void onResume() {
         super.onResume();
         subscriptionList.clear();

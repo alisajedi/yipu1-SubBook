@@ -52,7 +52,7 @@ import java.util.ArrayList;
  * By clicking the Delete button. An alert dialog shows to ask for deleteing confirmation.
  */
 public class ShowDetailsActivity extends AppCompatActivity {
-    private static final String FILENAME = "subscription_list.sav";
+    //private static final String FILENAME = "subscription_list.sav";
     private Subscription subscription;
     private TextView nameText;
     private TextView amountText;
@@ -60,8 +60,8 @@ public class ShowDetailsActivity extends AppCompatActivity {
     private TextView commentText;
     private ArrayList<Subscription> subscriptionList;
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    @Override
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_details);
@@ -149,13 +149,4 @@ public class ShowDetailsActivity extends AppCompatActivity {
         commentText.setText(subscription.getComment());
     }
 
-    private boolean checkInput(String name, String dateString, String amountString, String comment) {
-        if (name.length() == 0 || name.length() > 20 ||
-                !dateString.matches("^((19|20)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$") ||
-                !amountString.matches("[0-9.]+") || comment.length() > 30) {
-            return false;
-        } else {
-            return true;
-        }
-    }
 }
